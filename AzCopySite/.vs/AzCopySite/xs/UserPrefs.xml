@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{B2056176-5AFC-4F20-9928-EBBE08A27EE4}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AzCopySite/wwwroot/js/site.js">
+    <Files>
+      <File FileName="AzCopySite/Pages/Index.cshtml" Line="5" Column="1" />
+      <File FileName="AzCopySite/Pages/Shared/_Layout.cshtml" Line="30" Column="23" />
+      <File FileName="AzCopySite/wwwroot/js/site.js" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.AzCopySite PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>

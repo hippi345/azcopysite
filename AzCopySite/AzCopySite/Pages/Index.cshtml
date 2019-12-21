@@ -1,0 +1,143 @@
+﻿@page
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div>
+    <p></p>
+    <h1>Welcome to the AzCopy Site</h1>
+    <p>Based on AzCopy tool. Documentation at <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-configure">AzCopy Site</a></p>
+
+    <p>If you wish to use Azure AD for authentication then you can login with Azure AD. Note that you will
+    need "Reader" permissions on your storage account as well as the desired Storage data plane access role
+    (e.g. Storage Data Blob Reader, Contributor, Owner).</p>
+    <button id="login">Login to Azure AD</button>
+
+    <div class="account2account">
+        <h1>Storage Account to Storage Account Copy</h1>
+        <p>Enter in source storage account name: </p>
+        <input id="sourceNameA2A" />
+        <p>Enter in SAS for source: </p>
+        <input id="sourceSASA2A" />
+        <p>Enter in destination storage account name: </p>
+        <input id="destNameA2A" />
+        <p>Enter in destination SAS: </p>
+        <input id="destSASA2A" />
+        <p>Recursive Copy <input id="account2accountRecursion" type="checkbox" title="Recursive" /></p>
+        <p></p>
+        <button id="submitAccount2Account">Submit</button>
+    </div>
+
+    <div class="local2account">
+        <h1>Local path to Storage Account Copy (Upload)</h1>
+        <p>Enter in local file: </p>
+        <input type="file" id="localPathUpload" />
+
+        <p>Enter in destination storage account name: </p>
+        <input id="destNameFromLocal" />
+        <p>Enter in destination SAS: </p>
+        <input id="destSASFromLocal" />
+        <p>Recursive Copy <input id="local2accountRecursion" type="checkbox" title="Recursive" /></p>
+        <p></p>
+        <button id="submitLocal2Account">Submit</button>
+    </div>
+
+    <div class="account2local">
+        <h1>Storage Account to Local (Download)</h1>
+        <p>Enter in local file path: </p>
+        <input type="file" id="localPathDownload" />
+
+        <p>Enter in destination storage account name: </p>
+        <input id="destNameToLocal" />
+        <p>Enter in destination SAS: </p>
+        <input id="destSASToLocal" />
+        <p>Recursive Copy <input id="account2localRecursion" type="checkbox" title="Recursive" /></p>
+        <p></p>
+        <button id="submitAccount2Local">Submit</button>
+    </div>
+
+    <div class="deleteStorage">
+        <h1>Delete Directory, content, or single blob/file</h1>
+        <p>Enter in destination storage account name: </p>
+        <input id="destNameDelete" />
+        <p>Enter in destination SAS: </p>
+        <input id="destSASDelete" />
+        <p>Recursive Delete <input id="deleteRecursion" type="checkbox" title="Recursive" /></p>
+        <p></p>
+        <button id="submitDelete">Submit</button>
+    </div>
+
+    <div class="Sync">
+        <h1>Syncing of directories</h1>
+
+        <h3>Syncing Storage Accounts</h3>
+        <p>Enter in source storage account name: </p>
+        <input id="sourceNameSync" />
+        <p>Enter in SAS for source: </p>
+        <input id="sourceSASSync" />
+        <p>Enter in destination storage account name: </p>
+        <input id="destNameSync" />
+        <p>Enter in destination SAS: </p>
+        <input id="destSASSync" />
+        <p></p>
+        <p>Sync source and sink</p>
+        <select>
+            <option value="FileToStorage">Remote syncs w/ Local</option>
+            <option value="StorageToFile">Local syncs w/ remote</option>
+        </select>
+        <button id="submitAccount2AccountSync">Submit</button>
+
+        <h3>Syncing Local and Storage</h3>
+        <p>Enter in local file path: </p>
+        <input type="file" id="localPathSyncFromStorage" />
+
+        <p>Enter in destination storage account name: </p>
+        <input id="destNameToLocalSync" />
+        <p>Enter in destination SAS: </p>
+        <input id="destSASToLocalSync" />
+        <p></p>
+        <p>Sync source and sink</p>
+        <select>
+            <option value="OneToTwo">Account 1 syncs w/ Account 2</option>
+            <option value="TwoToOne">Account 2 syncs w/ Account 1</option>
+        </select>
+        <button id="submitAccount2LocalSync">Submit</button>
+
+    </div>
+
+    <div class="optionsForCopy">
+        <h1>Options for Copy</h1>
+            <p>MB Capping (Mbps)</p>
+            <input type="checkbox" id="mbCapRadio" />
+            <input id="mbCapValue" />
+
+            <p></p>
+            <p>Plan Files Location</p>
+            <input type="file" id="planFilesLocation" />
+
+            <p></p>
+            <p>Log Files Location</p>
+            <input type="file" id="logFilesLocation" />
+
+            <p></p>
+            <p>Logging Level: </p>
+            <select>
+                <option value="NONE">NONE</option>
+                <option value="DEBUG">DEBUG</option>
+                <option value="INFO">INFO</option>
+                <option value="WARNING">WARNING</option>
+                <option value="ERROR">ERROR</option>
+                <option value="PANIC">PANIC</option>
+                <option value="FATAL">FATAL</option>
+            </select>
+            <button id="logLevel">Submit</button>
+    </div>
+
+    <div class="benchmark">
+        <h1>Run benchmark test</h1>
+        <p>Enter in Storage Account name: </p>
+        <input id="benchmarkAccount" />
+        <p>Enter in SAS for remote account: </p>
+        <input id="benchmarkSAS" />
+    </div>
+</div>
