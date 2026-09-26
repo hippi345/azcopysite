@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace AzCopySite.Pages
-{
-    public class AboutModel : PageModel
-    {
-        public string Message { get; set; }
+namespace AzCopySite.Pages;
 
-        public void OnGet()
-        {
-            Message = "Your application description page.";
-        }
+public class AboutModel : PageModel
+{
+    public string Message { get; set; } = "Your application description page.";
+
+    public void OnGet()
+    {
     }
 }

@@ -1,0 +1,39 @@
+## .NET
+bin/
+obj/
+out/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.cache
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Visual Studio / Rider
+.vs/
+.idea/
+*.rsuser
+
+## OS
+.DS_Store
+Thumbs.db
+
+## Logs and local config
+*.log
+appsettings.*.local.json
+secrets.json
+
+## Test / coverage
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+
+## Node (if added later)
+node_modules/
+
+## AzCopy binary (install via package manager or Microsoft docs)
+AzCopySite/AzCopySite/azcopy
+AzCopySite/AzCopySite/azcopy.exe

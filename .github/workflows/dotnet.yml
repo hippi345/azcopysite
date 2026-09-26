@@ -1,28 +1,34 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
 name: .NET
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [master]
   pull_request:
-    branches: [ "master" ]
+    branches: [master]
+
+permissions:
+  contents: read
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 6.0.x
-    - name: Restore dependencies
-      run: dotnet restore AzCopySite/AzCopySite.sln
-    - name: Build
-      run: dotnet build --no-restore AzCopySite/AzCopySite.sln
-    - name: Test
-      run: dotnet test --no-build --verbosity normal AzCopySite/AzCopySite.sln
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore AzCopySite/AzCopySite.sln
+
+      - name: Format (verify)
+        run: dotnet format AzCopySite/AzCopySite.sln --verify-no-changes --verbosity diagnostic
+
+      - name: Build
+        run: dotnet build --no-restore AzCopySite/AzCopySite.sln --configuration Release
+
+      - name: Test
+        run: dotnet test AzCopySite/AzCopySite.sln --no-build --configuration Release --verbosity normal
